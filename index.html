@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="js/paper-full.js" type="text/javascript"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/personal.css">
+    <script type="text/paperscript" canvas="myCanvas">
+        frameCount = 0;
+        starArray = [];
+        colorArray = ["#68545b", "#00E8FF", "#6400E4", "#b9a1c6", "#E1F4FF"];
+        
+        function onFrame(event) {
+            frameCount++;
+            if (!(frameCount % 15)) {
+                var maxPoint = new Point(view.size.width, view.size.height);
+                var randomPoint = Point.random();
+                var center = maxPoint * randomPoint;
+
+                var points = 4;
+                var radius1 = 3;
+                var radius2 = 5;
+                var path = new Path.Star(center, points, radius1, radius2);
+                //path.fillColor = colorArray[Math.floor(Math.random()*5)];
+                path.fillColor = "#F2F1C4";
+                path.rotate(45);
+                starArray.push(path);
+            }
+            for (var i = 0; i < starArray.length; i++) {
+                starArray[i].fillColor.hue += 1;
+                starArray[i].scale(.985);
+
+
+                if (starArray[i].area == 0) {
+                    starArray[i].remove();
+                    starArray.splice(i, 1);
+                }
+            }
+
+        } </script>
+    <title>ANDY HUANG</title>
+</head>
+
+<body>
+
+
+    <section id="Home">
+        <nav id="main-nav" class="navbar navbar-dark navbar-expand-md
+                bgColor fix-top py-0">
+            <div class="container">
+                <a href="#" class="navbar-brand">ANDY HUANG</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinks" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                <div class="collapse navbar-collapse" id="navLinks">
+
+                    <ul class="navbar-nav ml-auto nav-pills">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+<!-- 
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Explore</a>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Resume</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+        </div>
+    </section>
+
+
+    <section id="contents" class="container px-5">
+        <div class="jumbotron bgColor-Main">
+
+            <section id="main" class="contentSection">
+
+                <blockquote>
+                    <p class="lead text-white px-5">
+                        "We grow great by dreams. All big men are dreamers. They see things in the soft haze of a spring day or in the red fire of a long winter’s evening. Some of us let these great dreams die, but others nourish and protect them; nurse them through bad days
+                        till they bring them to the sunshine and light which comes always to those who sincerely hope that their dreams will come true."
+                    </p>
+                    <footer class="blockquote-footer text-right px-5">Woodrow Wilson
+                    </footer>
+                </blockquote>
+
+            </section>
+
+            <section id="About" class="contentSection">
+
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-6">
+                        <div class="row align-items-center
+                                justify-content-center">
+
+                            <h1 class="display-2">About ME</h1>
+                            <p>Hello! My name is Andy Huang, a recent graduate from <a href="https://www.psu.edu/">The
+                                        Pennsylvania State University</a> with a Bachelor's of Science degree in Computer Science and minors in Cyber and Security Mathematics.
+                            </p>
+                            <p>I enjoy various challenges (especially the sastification of completing the challenge) and learning new technologies. Personal hobbies of mine includes: reading books, playing games, watching anime, and interacting with my friends</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row align-items-center
+                                justify-content-center">
+
+                            <img id="selfPhoto" class="border border-success
+                                    my-5 img-fluid" src="images/selfPhoto.JPG">
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- <section id="Explore" class="contentSection">
+
+                <div class="row align-items-center justify-content-between">
+                </div>
+            </section> -->
+
+            <section id="Resume" class="contentSection">
+
+                <embed src="Andy_s_Resume.pdf" width="100%" height="600px" />
+
+            </section>
+
+            <section id="ContactMe" class="contentSection">
+
+                <h1 class="display-2">Contact Info</h1>
+                <p>Don't be shy, come and say hi!</p>
+                <a href="https://www.linkedin.com/in/andyhuang2797/"><i
+                            class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Andy051"><i class="fab
+                            fa-github"></i></a>
+                <a href="mailto: h27andy@gmail.com"><i class="fas
+                            fa-envelope"></i></a>
+
+            </section>
+
+
+        </div>
+    </section>
+
+    <canvas id="myCanvas" resize></canvas>
+
+
+    <script src="js/personal.js" type="text/javascript"></script>
+</body>
+
+</html>
