@@ -12,7 +12,7 @@ navSection.on("click", function() {
         if (i === index) {
             contentSection[i].style.display = "block";
             contentSection[i].style.opacity = 1;
-            if (i === 3 || i == 1) {
+            if (i === 2 || i == 1) {
                 $(".jumbotron").css("margin-top", "10%");
             } else {
                 $(".jumbotron").css("margin-top", "15%");
